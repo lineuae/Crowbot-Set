@@ -23,6 +23,6 @@ module.exports = {
             return message.reply("> L'utilisateur mentionné n'est pas dans un salon vocal !");
         }
 
-        return message.reply(`> ${member.user.tag} se trouve dans le salon vocal : \`${member.voice.channel.name}\`.`);
+        return message.reply(`> ${member.user.tag} se trouve dans le salon vocal : <#${member.voice.channel.id}>.`);
     },
 };
