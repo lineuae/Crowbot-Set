@@ -13,16 +13,16 @@ module.exports = {
         const hasPermission = message.member.roles.cache.some(role => allowedRoles.includes(role.id));
 
         if (!hasPermission) {
-            return message.reply("> `❌` Erreur : Vous n'avez pas la permission d'utiliser cette commande !");
+            return message.reply("> Vous n'avez pas la permission d'utiliser cette commande !");
         }
 
         const userId = args[0].replace(/[<@!>]/g, '');
         const member = message.guild.members.cache.get(userId);
 
         if (!member || !member.voice.channel) {
-            return message.reply("> `❌` Erreur : L'utilisateur mentionné n'est pas dans un salon vocal !");
+            return message.reply("> L'utilisateur mentionné n'est pas dans un salon vocal !");
         }
 
-        return message.reply(`> ✅ ${member.user.tag} se trouve dans le salon vocal : \`${member.voice.channel.name}\`.`);
+        return message.reply(`> ${member.user.tag} se trouve dans le salon vocal : \`${member.voice.channel.name}\`.`);
     },
 };
