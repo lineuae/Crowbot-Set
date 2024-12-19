@@ -11,7 +11,7 @@ module.exports = {
         en: {'join <@user | ID | voice channel ID>': "Join a voice channel."}
     },
     run: async (client, message, args) => {
-        const allowedRoles = ['1315144233568567306', '1315144220818018335'; '1315144227750940742', '1315144214832615485', '1315144202874785802', '1315144199045251082', '1314701776196206794']; // Remplace par les IDs des rôles autorisés
+        const allowedRoles = ['1315144233568567306', '1315144220818018335', '1315144227750940742', '1315144214832615485', '1315144202874785802', '1315144199045251082', '1314701776196206794']; // Remplace par les IDs des rôles autorisés
         const hasPermission = message.member.roles.cache.some(role => allowedRoles.includes(role.id));
 
         if (!hasPermission) {
