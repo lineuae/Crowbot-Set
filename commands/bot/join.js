@@ -32,7 +32,7 @@ module.exports = {
                 .then(() => message.reply(`> ✅ Vous avez rejoint le salon vocal.`))
                 .catch(error => message.reply(`> ❌ Erreur : ${error.message}`));
         } else {
-            return message.reply("> `❌` Erreur : L'utilisateur ou le salon vocal spécifié n'existe pas !");
+            return message.reply("> L'utilisateur n'est pas en vocal ou le salon vocal spécifié n'existe pas !");
         }
     },
 };
