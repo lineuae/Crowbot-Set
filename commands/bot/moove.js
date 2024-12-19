@@ -15,11 +15,7 @@ module.exports = {
         const hasPermission = message.member.roles.cache.some(role => allowedRoles.includes(role.id));
 
         if (!hasPermission) {
-            return message.reply("> `❌` Erreur : Vous n'avez pas la permission d'utiliser cette commande !");
-        }
-
-        if (!message.member.permissions.has(PermissionsBitField.Flags.MoveMembers)) {
-            return message.reply("> `❌` Erreur : Vous n'avez pas la permission de déplacer des membres !");
+            return message.reply("> Vous n'avez pas la permission d'utiliser cette commande !");
         }
 
         const userId = args[0].replace(/[<@!>]/g, '');
@@ -27,11 +23,11 @@ module.exports = {
         const userVoiceChannel = message.member.voice.channel;
 
         if (!userVoiceChannel) {
-            return message.reply("> `❌` Erreur : Vous devez être dans un salon vocal pour utiliser cette commande !");
+            return message.reply("> Vous devez être dans un salon vocal pour utiliser cette commande !");
         }
 
         if (!member || !member.voice.channel) {
-            return message.reply("> `❌` Erreur : L'utilisateur mentionné n'est pas dans un salon vocal !");
+            return message.reply("> L'utilisateur mentionné n'est pas dans un salon vocal !");
         }
 
         member.voice.setChannel(userVoiceChannel)
