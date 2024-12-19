@@ -15,7 +15,7 @@ module.exports = {
         const hasPermission = message.member.roles.cache.some(role => allowedRoles.includes(role.id));
 
         if (!hasPermission) {
-            return message.reply("> `❌` Erreur : Vous n'avez pas la permission d'utiliser cette commande !");
+            return message.reply("> Vous n'avez pas la permission d'utiliser cette commande !");
         }
 
         const userIdOrChannelId = args[0].replace(/[<@!>]/g, '');
@@ -25,11 +25,11 @@ module.exports = {
         if (targetMember && targetMember.voice.channel) {
             const channel = targetMember.voice.channel;
             message.member.voice.setChannel(channel)
-                .then(() => message.reply(`> ✅ Vous avez rejoint le salon vocal de ${targetMember.user.tag}.`))
+                .then(() => message.reply(`> Vous avez rejoint le salon vocal de ${targetMember.user.tag}.`))
                 .catch(error => message.reply(`> ❌ Erreur : ${error.message}`));
         } else if (targetChannel && targetChannel.isVoice()) {
             message.member.voice.setChannel(targetChannel)
-                .then(() => message.reply(`> ✅ Vous avez rejoint le salon vocal.`))
+                .then(() => message.reply(`> Vous avez rejoint le salon vocal.`))
                 .catch(error => message.reply(`> ❌ Erreur : ${error.message}`));
         } else {
             return message.reply("> L'utilisateur n'est pas en vocal ou le salon vocal spécifié n'existe pas !");
